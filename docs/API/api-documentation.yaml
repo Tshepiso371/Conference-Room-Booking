@@ -1,0 +1,131 @@
+openapi: 3.0.0
+
+info:
+  title: Conference Room Booking System API
+  description: >
+    This API defines the contract for the Conference Room Booking System.
+    It describes how clients can view conference rooms, check availability,
+    and create or manage room bookings.
+  version: 1.0.0
+
+servers:
+  - url: https://api.conferencebooking.local/v1
+    description: Production environment (documentation only)
+  - url: https://staging.api.conferencebooking.local/v1
+    description: Staging environment for testing (documentation only)
+
+paths:
+  /rooms:
+    get:
+      summary: Retrieve all conference rooms
+      description: Returns a list of all available conference rooms.
+      responses:
+        '200':
+          description: A list of conference rooms
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Room'
+
+  /bookings:
+    get:
+      summary: Retrieve all bookings
+      description: Returns a list of all conference room bookings.
+      responses:
+        '200':
+          description: A list of bookings
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Booking'
+
+    post:
+      summary: Create a new booking
+      description: Creates a new conference room booking.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BookingRequest'
+      responses:
+        '201':
+          description: Booking created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Booking'
+        '400':
+          description: Invalid booking request
+
+components:
+  schemas:
+    Room:
+      type: object
+      required:
+        - id
+        - name
+        - capacity
+      properties:
+        id:
+          type: string
+          example: "room-101"
+        name:
+          type: string
+          example: "Main Conference Room"
+        capacity:
+          type: integer
+          example: 12
+
+    Booking:
+      type: object
+      required:
+        - id
+        - roomId
+        - startTime
+        - endTime
+      properties:
+        id:
+          type: string
+          example: "booking-001"
+        roomId:
+          type: string
+          example: "room-101"
+        startTime:
+          type: string
+          format: date-time
+          example: "2026-02-01T09:00:00Z"
+        endTime:
+          type: string
+          format: date-time
+          example: "2026-02-01T10:00:00Z"
+
+    BookingRequest:
+      type: object
+      required:
+        - roomId
+        - startTime
+        - endTime
+      properties:
+        roomId:
+          type: string
+          example: "room-101"
+        startTime:
+          type: string
+          format: date-time
+          example: "2026-02-01T09:00:00Z"
+        endTime:
+          type: string
+          format: date-time
+          example: "2026-02-01T10:00:00Z"
+
+    ErrorResponse:
+      type: object
+      properties:
+        message:
+          type: string
+          example: "Invalid booking time range"
