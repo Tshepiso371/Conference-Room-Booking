@@ -10,9 +10,7 @@ info:
 
 servers:
   - url: https://api.conferencebooking.local/v1
-    description: Production environment (documentation only)
   - url: https://staging.api.conferencebooking.local/v1
-    description: Staging environment for testing (documentation only)
 
 paths:
   /rooms:
