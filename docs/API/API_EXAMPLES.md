@@ -19,8 +19,8 @@ and not implemented.
 **Authentication Header Example:**
 ```http
 Authorization: Bearer <access-token>
-3. Room Management
-3.1 Retrieve All Conference Rooms
+ 
+## Retrieve All Conference Rooms
 Retrieves a list of all conference rooms available in the system.
 Example Request:
 Copy code
@@ -38,7 +38,8 @@ Json
     "equipment": ["Projector", "Whiteboard"]
   }
 ]
-3.2 Retrieve a Single Conference Room
+
+## Retrieve a Single Conference Room
 Retrieves details of a specific conference room.
 Example Request:
 Copy code
@@ -54,7 +55,8 @@ Json
   "capacity": 10,
   "equipment": ["Projector", "Whiteboard"]
 }
-3.3 Create a Conference Room
+
+## Create a Conference Room
 Creates a new conference room.
 Example Request:
 Copy code
@@ -79,7 +81,8 @@ Json
   "capacity": 8,
   "equipment": ["TV Screen"]
 }
-3.4 Update a Conference Room
+
+## Update a Conference Room
 Updates details of an existing conference room.
 Example Request:
 Copy code
@@ -96,7 +99,8 @@ Json
   "capacity": 12,
   "equipment": ["Projector", "Whiteboard"]
 }
-3.5 Delete a Conference Room
+
+## Delete a Conference Room
 Deletes a conference room from the system.
 Example Request:
 Copy code
@@ -104,8 +108,8 @@ Http
 DELETE /rooms/room-101
 Authorization: Bearer <access-token>
 Example Response (204 No Content)
-4. Bookings
-4.1 Retrieve All Bookings
+
+## Retrieve All Bookings
 Retrieves a list of all room bookings.
 Example Request:
 Copy code
@@ -125,7 +129,7 @@ Json
     "bookedBy": "user@example.com"
   }
 ]
-4.2 Create a Booking
+## Create a Booking
 Creates a booking for a conference room.
 Example Request:
 Copy code
@@ -151,7 +155,7 @@ Json
   "roomId": "room-101",
   "status": "confirmed"
 }
-4.3 Cancel a Room Booking
+## Cancel a Room Booking
 Cancels an existing booking for a conference room.
 Example Request:
 Copy code
@@ -159,8 +163,8 @@ Http
 DELETE /bookings/booking-5002
 Authorization: Bearer <access-token>
 Example Response (204 No Content)
-5. Availability
-5.1 Check Room Availability
+
+## Check Room Availability
 Checks whether a conference room is available for a given date and time range.
 Example Request:
 Copy code
@@ -174,7 +178,7 @@ Json
   "roomId": "room-101",
   "available": false
 }
-6. Error Handling
+## Error Handling
 The API uses standard HTTP status codes to indicate errors.
 Room Not Found (404 Not Found):
 Copy code
