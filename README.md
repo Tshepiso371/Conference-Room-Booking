@@ -42,8 +42,9 @@ rather than a fully implemented application.
 ### Setup
 Clone the repository and navigate into the project directory:
 
-git clone https://github.com/Tshepiso371/git-fundamentals-practice.git
-cd git-fundamentals-practice
+git clone https://github.com/Tshepiso371/Conference-Room-Booking
+
+cd Conference-Room-Booking
 
 ## Documentation Artefacts
 
