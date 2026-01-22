@@ -13,13 +13,6 @@ implementation exists.
 The API uses token-based authentication with a Bearer token. All endpoints require the
 client to include an access token in the `Authorization` header.
 
-Since this project focuses on API documentation, the authentication service is assumed
-and not implemented.
-
-**Authentication Header Example:**
-```http
-Authorization: Bearer <access-token>
- 
 ## Retrieve All Conference Rooms
 Retrieves a list of all conference rooms available in the system.
 Example Request:
