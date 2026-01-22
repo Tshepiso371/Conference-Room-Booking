@@ -15,6 +15,8 @@ client to include an access token in the `Authorization` header.
 
 ## Retrieve All Conference Rooms
 Retrieves a list of all conference rooms available in the system.
+
+
 Example Request:
 Copy code
 Http
@@ -34,6 +36,8 @@ Json
 
 ## Retrieve a Single Conference Room
 Retrieves details of a specific conference room.
+
+
 Example Request:
 Copy code
 Http
@@ -51,6 +55,8 @@ Json
 
 ## Create a Conference Room
 Creates a new conference room.
+
+
 Example Request:
 Copy code
 Http
@@ -83,6 +89,7 @@ Http
 PUT /rooms/room-101
 Authorization: Bearer <access-token>
 Content-Type: application/json
+
 Example Response (200 OK):
 Copy code
 Json
@@ -95,6 +102,7 @@ Json
 
 ## Delete a Conference Room
 Deletes a conference room from the system.
+
 Example Request:
 Copy code
 Http
@@ -104,6 +112,7 @@ Example Response (204 No Content)
 
 ## Retrieve All Bookings
 Retrieves a list of all room bookings.
+
 Example Request:
 Copy code
 Http
@@ -130,6 +139,7 @@ Http
 POST /bookings
 Authorization: Bearer <access-token>
 Content-Type: application/json
+
 Example Request Body:
 Copy code
 Json
@@ -150,6 +160,7 @@ Json
 }
 ## Cancel a Room Booking
 Cancels an existing booking for a conference room.
+
 Example Request:
 Copy code
 Http
@@ -173,6 +184,7 @@ Json
 }
 ## Error Handling
 The API uses standard HTTP status codes to indicate errors.
+
 Room Not Found (404 Not Found):
 Copy code
 Json
